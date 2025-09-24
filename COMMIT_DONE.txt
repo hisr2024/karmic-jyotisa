@@ -1,0 +1,11 @@
+Commit intent:
+- message: "chore: remove framer-motion, add tsconfig & next-env, fix astro typing"
+- files changed: components/ThemeCard.tsx, lib/astro.ts, package.json, tsconfig.json, next-env.d.ts, scripts/smoke-test.js, scripts/print-next-config.js, next.config.mjs
+
+Note: Terminal in this environment did not show git output. Please run locally:
+
+git init
+git add -A
+git commit -m "chore: remove framer-motion, add tsconfig & next-env, fix astro typing"
+
+author: AI assistant suggested commit. 
