@@ -50,6 +50,27 @@ node .\smoke-test.js
 
 ---
 
+## watch-and-check.ps1
+
+`watch-and-check.ps1` is a lightweight PowerShell file watcher that runs the repository scanner and then attempts a build when source files change. It intentionally excludes `node_modules`, `.git`, and the `scripts` folder so it won't trigger on generated files or the watcher itself.
+
+Usage (PowerShell):
+
+```powershell
+# Default - watch parent folder, debounce 800ms
+.\watch-and-check.ps1
+
+# Run immediately and watch with 500ms debounce
+.\watch-and-check.ps1 -RunOnStart -DebounceMs 500
+
+# Watch an explicit path
+.\watch-and-check.ps1 -Path '..\\app' -DebounceMs 1000
+```
+
+Notes:
+- The watcher runs `node ./scripts/check-no-motion.js` first. If that script exits non-zero the build is skipped.
+- Use `Ctrl+C` to stop the watcher.
+
 ## Committing changes
 If you want to commit the script changes locally, run:
 
